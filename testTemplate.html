@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://s.kontur.ru/common-v2/fonts/LabGrotesque/LabGrotesque.css" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Тестирование задач</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      background-color: #000;
+      font-family: 'Roboto', sans-serif; /* Изменено на Roboto */
+    }
+
+    .button {
+      height: 48px; /* Высота кнопки */
+      padding: 0 20px; /* Горизонтальные отступы */
+      font-family: 'Roboto', sans-serif; /* Шрифт Roboto */
+      font-size: 14pt; /* Размер шрифта */
+      color: #ffffff; /* Цвет текста */
+      background-color: #000; /* Цвет фона кнопки */
+      border: 1px solid rgba(255, 255, 255, 0.54); /* Убираем рамку */
+      border-radius: 8px; /* Скругление углов */
+      cursor: pointer; /* Курсор при наведении */
+      transition: background-color 0.3s; /* Плавный переход цвета при наведении */
+    }
+
+    .button:hover {
+      background-color: #222; /* Цвет фона при наведении */
+    }
+
+    /* Столбец слева на всю высоту */
+    .sidebar {
+      width: 400px;
+      padding: 24px; /* Уменьшено с 20px до 10px */
+      background-color: #000;
+      height: 100vh; /* Полная высота */
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      color: #fff;
+    }
+
+    .sidebar h1 {
+      font-size: 20pt;
+      margin-bottom: 5px; /* Уменьшено с 0px до 5px для небольшого отступа */
+    }
+
+    .sidebar h2 {
+      font-size: 16pt;
+      margin-bottom: 0px; /* Уменьшено с 0px до 5px для небольшого отступа */
+    }    
+
+    .sidebar p {
+      font-size: 12pt;
+      color: rgba(255, 255, 255, 0.87);
+      margin-bottom: 0px; /* Добавлен небольшой отступ между абзацами */
+    }
+
+    /* Для интерактивного прототипа */
+    .prototype-container {
+      position: relative;
+      flex-grow: 1;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 0px 24px 0 0; /* Отступы сверху, справа и снизу */
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 66.66%; /* Соотношение сторон 3:2 */
+      overflow: hidden;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      box-sizing: border-box; /* Включает padding и border в ширину и высоту */
+    }
+
+    /* Прозрачная маска для перехвата кликов */
+    .click-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none; /* Пропускает клики к iframe */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Левый столбец -->
+  <div class="sidebar">
+    <h1>Тестирование прототипа</h1>
+    <h2> <br>➡️ Ваше задание</h2>    
+    <p>Представим, что вы выполнили задачу «Сходить на обед в 13:00» и нужно отметить её завершение в Экстерне. <br> <br> Как будете действовать? <br> <br><br></p>
+    <h2>ℹ️ Инструкция</h2>
+    <p>Справа — макет с изменённым интерфейсом, на который можно нажимать мышкой. Некоторые элементы могут быть недоступны для нажатия.</p>
+    <p>После выполнения задания, пожалуйста, поделитесь впечатлениями в анкете. Это поможет нам узнать больше о вашем опыте.</p>    
+
+    <button class="button" onclick="window.location.href='https://kontur.typeform.com/to/nqlrDpjx#user=xxxxx&keuserid=xxxxx';">Поделиться впечатлениями</button>
+  </div>
+
+  <!-- Встроенный кликабельный прототип Figma -->
+  <div class="prototype-container">
+    <div class="iframe-wrapper">
+      <iframe 
+        id="figma-prototype"
+        src="https://embed.figma.com/proto/LJmZOgWSOuoxPCkfwTtIg5/%D0%AE%D0%A2.-%D0%92%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8?page-id=0%3A1&node-id=0-5004&viewport=1157%2C363%2C0.57&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=0%3A5004&hotspot-hints=0&embed-host=share&hide-ui=1">
+      </iframe>
+      <!-- Прозрачная маска для сбора кликов -->
+      <div class="click-mask"></div>
+    </div>
+  </div>
+
+</body>
+</html>
