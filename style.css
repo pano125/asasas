@@ -42,7 +42,7 @@ label {
     color: #222;
 }
 
-textarea, input[type="url"] {
+textarea, input {
     width: 100%;
     padding: 10px;
     border: 1px solid rgba(0, 0, 0, 0.16);
